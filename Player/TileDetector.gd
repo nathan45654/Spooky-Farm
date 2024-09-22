@@ -23,6 +23,7 @@ func _process_tilemap_collision(body: Node2D, body_rid: RID):
 	if exit != 0 and $CollisionCooldownTimer.get_time_left() == 0:
 		map_exit_was_hit.emit(exit)
 		start_collision_timer()
+		
 	return exit
 		
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:

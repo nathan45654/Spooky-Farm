@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://4agmkrjl2jci"]
+[gd_scene load_steps=10 format=3 uid="uid://4agmkrjl2jci"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_3c0c4"]
 [ext_resource type="PackedScene" uid="uid://dg106awi5lwm2" path="res://player.tscn" id="1_yohre"]
 [ext_resource type="PackedScene" uid="uid://b7kcyjb5s31sk" path="res://enemy.tscn" id="3_wrn3b"]
+[ext_resource type="Script" path="res://maps_manager.gd" id="3_wxi3d"]
 [ext_resource type="PackedScene" uid="uid://63ba73te5m1" path="res://Maps/Home.tscn" id="4_dddam"]
 [ext_resource type="Script" path="res://Maps/Home.gd" id="4_u1ipa"]
 [ext_resource type="PackedScene" uid="uid://ckfufnj0jx2c2" path="res://Maps/Farm.tscn" id="5_8kwoh"]
@@ -12,23 +13,27 @@
 [node name="Node" type="Node"]
 script = ExtResource("1_3c0c4")
 
-[node name="Home" parent="." instance=ExtResource("4_dddam")]
-script = ExtResource("4_u1ipa")
-
-[node name="Farm" parent="." instance=ExtResource("5_8kwoh")]
-script = ExtResource("6_tecbu")
-
-[node name="enemy" parent="Farm" instance=ExtResource("3_wrn3b")]
-position = Vector2(336, 207)
-
 [node name="player" parent="." instance=ExtResource("1_yohre")]
-position = Vector2(1324, 57)
+position = Vector2(978, 1629)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-limit_left = -32
-limit_top = -32
-limit_right = 2592
-limit_bottom = 1312
+limit_left = 0
+limit_top = 0
+limit_right = 2560
+limit_bottom = 1280
 
-[node name="MapsInfo" type="Node" parent="."]
+[node name="MapsManager" type="Node" parent="."]
+script = ExtResource("3_wxi3d")
+
+[node name="Home" parent="MapsManager" instance=ExtResource("4_dddam")]
+position = Vector2(1, 1536)
+script = ExtResource("4_u1ipa")
+
+[node name="Farm" parent="MapsManager" instance=ExtResource("5_8kwoh")]
+script = ExtResource("6_tecbu")
+
+[node name="enemy" parent="MapsManager/Farm" instance=ExtResource("3_wrn3b")]
+position = Vector2(336, 207)
+
+[node name="MapsInfo" type="Node" parent="MapsManager"]
 script = ExtResource("8_6q7fx")
