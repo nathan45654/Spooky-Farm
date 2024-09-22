@@ -13,15 +13,6 @@
 [node name="Node" type="Node"]
 script = ExtResource("1_3c0c4")
 
-[node name="player" parent="." instance=ExtResource("1_yohre")]
-position = Vector2(978, 1629)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-limit_left = 0
-limit_top = 0
-limit_right = 2560
-limit_bottom = 1280
-
 [node name="MapsManager" type="Node" parent="."]
 script = ExtResource("3_wxi3d")
 
@@ -37,3 +28,15 @@ position = Vector2(336, 207)
 
 [node name="MapsInfo" type="Node" parent="MapsManager"]
 script = ExtResource("8_6q7fx")
+
+[node name="player" parent="." instance=ExtResource("1_yohre")]
+position = Vector2(978, 1629)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+limit_left = 0
+limit_top = 0
+limit_right = 2560
+limit_bottom = 1280
+
+[connection signal="get_camera" from="MapsManager" to="." method="_on_maps_manager_get_camera"]
+[connection signal="set_player_position" from="MapsManager" to="player" method="_on_maps_manager_set_player_position"]

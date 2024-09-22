@@ -39,3 +39,7 @@ func _process(delta: float) -> void:
 
 func _on_tile_detector_map_exit_was_hit(exit_number: int) -> void:
 	pass # Replace with function body.
+
+
+func _on_maps_manager_set_player_position(new_position: Vector2) -> void:
+	set_position(new_position)
