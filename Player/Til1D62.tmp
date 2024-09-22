@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwn4nfiqvaej8"]
+
+[ext_resource type="Script" path="res://Player/TileDetector.gd" id="1_jnqgl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yiyh"]
+size = Vector2(32, 64)
+
+[node name="TileDetector" type="Area2D"]
+collision_layer = 16
+collision_mask = 48
+script = ExtResource("1_jnqgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7yiyh")
+
+[node name="CollisionCooldownTimer" type="Timer" parent="."]
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
