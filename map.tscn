@@ -11,14 +11,10 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/next_alternative_id = 2
 0:1/0 = 0
-1:1/next_alternative_id = 2
-1:1/0 = 0
 1:0/next_alternative_id = 2
 1:0/0 = 0
 2:0/0 = 0
-2:1/0 = 0
 0:2/0 = 0
-1:2/0 = 0
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -43,6 +39,9 @@ texture_region_size = Vector2i(32, 32)
 8:2/0 = 0
 8:3/0 = 0
 7:3/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0t21f"]
 tile_size = Vector2i(32, 32)
@@ -113,14 +112,20 @@ sources/1 = SubResource("TileSetAtlasSource_fmxce")
 script = ExtResource("3_05tro")
 
 [node name="Floor" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_0t21f")
 
 [node name="foreground" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_uxior")
 
 [node name="objects" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_ysd4w")
 rendering_quadrant_size = 32
 
 [node name="boundary" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_set = SubResource("TileSet_r4c70")
+
+[node name="Exits" type="Node" parent="."]

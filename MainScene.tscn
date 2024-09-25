@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4agmkrjl2jci"]
+[gd_scene load_steps=13 format=3 uid="uid://4agmkrjl2jci"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_3c0c4"]
 [ext_resource type="PackedScene" uid="uid://dg106awi5lwm2" path="res://player.tscn" id="1_yohre"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://ckfufnj0jx2c2" path="res://Maps/Farm.tscn" id="5_8kwoh"]
 [ext_resource type="Script" path="res://Maps/Farm.gd" id="6_tecbu"]
 [ext_resource type="Script" path="res://Maps/maps_info.gd" id="8_6q7fx"]
+[ext_resource type="PackedScene" uid="uid://cvowbbi2q7m6n" path="res://Maps/Church.tscn" id="8_i5enl"]
+[ext_resource type="Script" path="res://Maps/Church.gd" id="9_k4xg4"]
+[ext_resource type="Script" path="res://day_timer.gd" id="12_rq827"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_3c0c4")
@@ -26,11 +29,15 @@ script = ExtResource("6_tecbu")
 [node name="enemy" parent="MapsManager/Farm" instance=ExtResource("3_wrn3b")]
 position = Vector2(336, 207)
 
+[node name="Church" parent="MapsManager" instance=ExtResource("8_i5enl")]
+position = Vector2(2176, 608)
+script = ExtResource("9_k4xg4")
+
 [node name="MapsInfo" type="Node" parent="MapsManager"]
 script = ExtResource("8_6q7fx")
 
 [node name="player" parent="." instance=ExtResource("1_yohre")]
-position = Vector2(978, 1629)
+position = Vector2(59, 68)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 limit_left = 0
@@ -38,5 +45,9 @@ limit_top = 0
 limit_right = 2560
 limit_bottom = 1280
 
+[node name="DayTimer" type="Timer" parent="."]
+script = ExtResource("12_rq827")
+
 [connection signal="get_camera" from="MapsManager" to="." method="_on_maps_manager_get_camera"]
 [connection signal="set_player_position" from="MapsManager" to="player" method="_on_maps_manager_set_player_position"]
+[connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

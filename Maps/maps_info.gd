@@ -2,6 +2,7 @@ extends Node
 
 var Home_exits = {}
 var Farm_exits = {}
+var Church_exits = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,10 +13,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	Home_exits_mapping()
 	Farm_exits_mapping()
+	Church_exits_mapping()
 
 func Home_exits_mapping():
 	Home_exits = {"2": ^"Farm", "3": ^"Cemetery"}
 	#var Home_Cemetery = 3
 	
 func Farm_exits_mapping():
-	Farm_exits = {"2": "Home"}
+	Farm_exits = {"2": "Home", "3": "Church"}
+	
+func Church_exits_mapping():
+	Church_exits = {"3": "Farm"}

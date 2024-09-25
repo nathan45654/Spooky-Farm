@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://px0ji2jd4kio"]
+
+[ext_resource type="Script" path="res://Crops/crop.gd" id="1_vn7lf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vn7lf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+animation = &"seed"

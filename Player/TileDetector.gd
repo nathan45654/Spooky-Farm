@@ -34,3 +34,23 @@ func start_collision_timer():
 		$CollisionCooldownTimer.set_wait_time(0.1)
 		$CollisionCooldownTimer.set_one_shot(true)
 		$CollisionCooldownTimer.start()
+
+func _on_player_plant(crop: Node2D, facing_direction: String) -> void:
+	pass
+	#var 
+			
+	#var tile_data = current_tilemap.get_cell_tile_data(_collided_tile_coords)
+	#var exit = tile_data.get_custom_data("Exit")
+	#print(exit)
+	#print("Time left: " + str($CollisionCooldownTimer.get_time_left()))
+	#if exit == null:
+		#exit = 0
+	#if exit != 0 and $CollisionCooldownTimer.get_time_left() == 0:
+		#map_exit_was_hit.emit(exit)
+		#start_collision_timer()
+		#
+	#return exit
+
+
+func _on_player_get_plant_tile(new_crop_coords: Node2D) -> void:
+	pass # Replace with function body.

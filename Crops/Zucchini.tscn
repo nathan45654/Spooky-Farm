@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://btmv1wkrx55oj"]
+
+[ext_resource type="PackedScene" uid="uid://px0ji2jd4kio" path="res://Crops/Crop.tscn" id="1_8t8mt"]
+[ext_resource type="Texture2D" uid="uid://brn03q6oshox4" path="res://Resources/Tilesets/Crops.png" id="2_apymv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdahv"]
+atlas = ExtResource("2_apymv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiv1k"]
+atlas = ExtResource("2_apymv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okbfh"]
+atlas = ExtResource("2_apymv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwr8s"]
+atlas = ExtResource("2_apymv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15sxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdahv")
+}],
+"loop": true,
+"name": &"harvestable",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiv1k")
+}],
+"loop": true,
+"name": &"seed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okbfh")
+}],
+"loop": true,
+"name": &"sprout",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwr8s")
+}],
+"loop": true,
+"name": &"unripe",
+"speed": 5.0
+}]
+
+[node name="Node2D" instance=ExtResource("1_8t8mt")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_15sxh")
+animation = &"harvestable"
