@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dtphi07fg4sgs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7v1i7"]
+bg_color = Color(0.760784, 0.588235, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e62dl"]
+bg_color = Color(0.760784, 0.588235, 0.290196, 1)
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.76, 0.587227, 0.2888, 1)
+RichTextLabel/styles/background = SubResource("StyleBoxFlat_7v1i7")
+RichTextLabel/styles/fill = SubResource("StyleBoxFlat_e62dl")

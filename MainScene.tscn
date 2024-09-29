@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://4agmkrjl2jci"]
+[gd_scene load_steps=14 format=3 uid="uid://4agmkrjl2jci"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_3c0c4"]
 [ext_resource type="PackedScene" uid="uid://dg106awi5lwm2" path="res://player.tscn" id="1_yohre"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cvowbbi2q7m6n" path="res://Maps/Church.tscn" id="8_i5enl"]
 [ext_resource type="Script" path="res://Maps/Church.gd" id="9_k4xg4"]
 [ext_resource type="Script" path="res://day_timer.gd" id="12_rq827"]
+[ext_resource type="PackedScene" uid="uid://cqbuun2xhh20w" path="res://UI/ui.tscn" id="13_gvlnw"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_3c0c4")
@@ -48,6 +49,9 @@ limit_bottom = 1280
 [node name="DayTimer" type="Timer" parent="."]
 script = ExtResource("12_rq827")
 
+[node name="UI" parent="." instance=ExtResource("13_gvlnw")]
+
 [connection signal="get_camera" from="MapsManager" to="." method="_on_maps_manager_get_camera"]
 [connection signal="set_player_position" from="MapsManager" to="player" method="_on_maps_manager_set_player_position"]
+[connection signal="set_clock_text" from="DayTimer" to="UI" method="_on_day_timer_set_clock_text"]
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

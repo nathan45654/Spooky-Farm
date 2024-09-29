@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-signal hit
 signal get_plant_tile(new_crop_coords: Node2D)
 
 @onready var crop_manager
@@ -46,7 +45,14 @@ func manage_input(delta: float):
 	move_and_slide()
 
 	# animations
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_pressed("select"):
+		var placement_coords = get_placement_tile_coords()
+		var crop_tile_status = crop_manager.get_crop_tile_status(placement_coords)
+		var crop_to_harvest = null
+		if crop_tile_status == 2:
+			crop_to_harvest = crop_manager.harvest_crop(placement_coords)
+			### add harvested crop to inventory here
+			#crop_to_harvest.queue_free()
 		$AnimatedSprite2D.animation = "attack"
 		status = "attack"
 		velocity = Vector2.ZERO
@@ -59,21 +65,25 @@ func manage_input(delta: float):
 
 	# place an item (plant for now)
 	if Input.is_action_just_pressed("place"):
-		var new_crop_vector = Vector2i(0,0)
-		if facing_direction == "left": new_crop_vector.x = -1
-		elif facing_direction == "right": new_crop_vector.x = 1
-		elif facing_direction == "up": new_crop_vector.y = -1
-		elif facing_direction == "down": new_crop_vector.y = 1
+
+		var new_crop_position = get_placement_tile_coords()
 		
-		# get crop position
-		var new_crop_position = Vector2i(position)/32 + new_crop_vector
 		var crop_node = crop_manager.get_node("Zucchini")
 		crop_manager.plant_crop(new_crop_position, crop_node)
 
-		# do same as _process_tilemap_collision or similar to find the custom data of the tile
-		# turn tile custom data in a planted tile, put crop on the tile
-		# do something similar with harvesting. Same physics, if tile in front of you has the custom data 
-		# that means something can be harvested, harvest and change custom data of the tile.
+func get_placement_tile_coords() -> Vector2i:
+		var placement_direction = Vector2i(0,0)
+		if facing_direction == "left": placement_direction.x = -1
+		elif facing_direction == "right": placement_direction.x = 1
+		elif facing_direction == "up": placement_direction.y = -1
+		elif facing_direction == "down": placement_direction.y = 1
+		
+		# get crop position
+		var player_position = position
+		player_position.y += 16
+		var placement_position = Vector2i(position)/32 + placement_direction
+		
+		return placement_position
 
 #func _on_tile_detector_map_exit_was_hit(exit_number: int) -> void:
 	#pass # Replace with function body.

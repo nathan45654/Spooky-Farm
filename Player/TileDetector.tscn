@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Player/TileDetector.gd" id="1_jnqgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yiyh"]
-size = Vector2(32, 64)
+size = Vector2(32, 48)
 
 [node name="TileDetector" type="Area2D"]
 collision_layer = 16
@@ -11,6 +11,7 @@ collision_mask = 48
 script = ExtResource("1_jnqgl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_7yiyh")
 
 [node name="CollisionCooldownTimer" type="Timer" parent="."]

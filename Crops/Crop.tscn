@@ -7,4 +7,4 @@ script = ExtResource("1_vn7lf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-animation = &"seed"
+animation = &""

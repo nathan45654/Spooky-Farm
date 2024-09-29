@@ -5,11 +5,12 @@ var unripe_day
 var harvestable_day
 var is_harvestable = false
 var total_days_passed
+var crop_name = "Zucchini"
 
 func _ready() -> void:
 	$AnimatedSprite2D.animation = "seed"
 	total_days_passed = 0
-	$player
+	#$player
 	unripe_day = 2
 	harvestable_day = 4
 

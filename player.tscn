@@ -38,7 +38,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clfww"]
-size = Vector2(30, 62)
+size = Vector2(30, 46)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -51,6 +51,7 @@ sprite_frames = SubResource("SpriteFrames_vdmxo")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_clfww")
 
 [node name="TileDetector" parent="." instance=ExtResource("6_fxjt4")]
