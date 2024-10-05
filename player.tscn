@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg106awi5lwm2"]
+[gd_scene load_steps=10 format=3 uid="uid://dg106awi5lwm2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_d0dtw"]
 [ext_resource type="Texture2D" uid="uid://b506nvg4bk1k3" path="res://Resources/test_guy_attack1.png" id="2_hqoy1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cxhwcnxctqrml" path="res://Resources/test_guy_walk1.png" id="4_hk8fl"]
 [ext_resource type="Texture2D" uid="uid://bwky5104hk685" path="res://Resources/test_guy_walk2.png" id="5_glqjs"]
 [ext_resource type="PackedScene" uid="uid://cwn4nfiqvaej8" path="res://Player/TileDetector.tscn" id="6_fxjt4"]
+[ext_resource type="PackedScene" uid="uid://cmko8iehvr7eg" path="res://Player/inventory.tscn" id="7_cntdc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vdmxo"]
 animations = [{
@@ -56,5 +57,8 @@ shape = SubResource("RectangleShape2D_clfww")
 
 [node name="TileDetector" parent="." instance=ExtResource("6_fxjt4")]
 
+[node name="Inventory" parent="." instance=ExtResource("7_cntdc")]
+
 [connection signal="get_plant_tile" from="." to="TileDetector" method="_on_player_get_plant_tile"]
 [connection signal="map_exit_was_hit" from="TileDetector" to="." method="_on_tile_detector_map_exit_was_hit"]
+[connection signal="update_inventory_ui" from="Inventory" to="." method="_on_inventory_update_inventory_ui"]

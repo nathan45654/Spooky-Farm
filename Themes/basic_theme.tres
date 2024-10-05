@@ -1,12 +1,37 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dtphi07fg4sgs"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dtphi07fg4sgs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7v1i7"]
-bg_color = Color(0.760784, 0.588235, 0.290196, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e62dl"]
-bg_color = Color(0.760784, 0.588235, 0.290196, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm1gq"]
+bg_color = Color(1, 0.768, 0.42, 1)
 
 [resource]
-RichTextLabel/colors/default_color = Color(0.76, 0.587227, 0.2888, 1)
-RichTextLabel/styles/background = SubResource("StyleBoxFlat_7v1i7")
-RichTextLabel/styles/fill = SubResource("StyleBoxFlat_e62dl")
+default_font_size = 16
+Panel/styles/panel = SubResource("StyleBoxFlat_hm1gq")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/selection_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_border = Color(0.49, 0.49, 0.49, 1)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 1)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 1)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 0
+RichTextLabel/constants/shadow_outline_size = 0
+RichTextLabel/constants/table_h_separation = 0
+RichTextLabel/constants/table_v_separation = 0
+RichTextLabel/constants/text_highlight_h_padding = 0
+RichTextLabel/constants/text_highlight_v_padding = 0
+RichTextLabel/font_sizes/bold_font_size = 16
+RichTextLabel/font_sizes/bold_italics_font_size = 16
+RichTextLabel/font_sizes/italics_font_size = 16
+RichTextLabel/font_sizes/mono_font_size = 16
+RichTextLabel/font_sizes/normal_font_size = 16
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null

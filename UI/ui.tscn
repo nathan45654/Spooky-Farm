@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqbuun2xhh20w"]
+[gd_scene load_steps=5 format=3 uid="uid://cqbuun2xhh20w"]
 
 [ext_resource type="Theme" uid="uid://dtphi07fg4sgs" path="res://Themes/basic_theme.tres" id="1_dkr1e"]
 [ext_resource type="Script" path="res://ui.gd" id="1_rgtdh"]
+[ext_resource type="Script" path="res://UI/inventory_container.gd" id="3_mtc8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8lkx"]
 size = Vector2(1028, 720)
@@ -19,9 +20,29 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_b8lkx")
 
-[node name="Clock" type="RichTextLabel" parent="."]
-offset_left = 374.0
-offset_top = -324.0
-offset_right = 474.0
-offset_bottom = -276.0
+[node name="InventoryContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_direction = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = -235.0
+offset_right = 472.0
+offset_bottom = 218.0
+script = ExtResource("3_mtc8g")
+
+[node name="ClockPanel" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 0
+offset_left = 355.0
+offset_top = -322.0
+offset_right = 444.0
+offset_bottom = -277.0
+theme = ExtResource("1_dkr1e")
+color = Color(1, 0.768627, 0.419608, 1)
+
+[node name="Clock" type="RichTextLabel" parent="ClockPanel"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 32.0
 theme = ExtResource("1_dkr1e")

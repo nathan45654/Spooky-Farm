@@ -1,5 +1,10 @@
 extends Node
 
+### TO_DO
+# create inventory item scene
+# create UI for inventory and way to access inventory items in inventory
+# create crop seeds inventory item
+
 var total_days
 
 func _ready() -> void:
@@ -8,6 +13,9 @@ func _ready() -> void:
 	$DayTimer.start_day()
 	var crop_manager = $MapsManager/Farm/CropManager
 	$player.crop_manager = crop_manager
+	$player/Inventory.inventory_container = $UI/InventoryContainer
+	$player.initialize()
+	
 	
 func _process(_delta):
 	$player/Camera2D.align()

@@ -28,6 +28,10 @@ window/layer_5="exits"
 
 project/assembly_name="Spooky Farm"
 
+[gui]
+
+theme/custom="res://Themes/basic_theme.tres"
+
 [input]
 
 right={

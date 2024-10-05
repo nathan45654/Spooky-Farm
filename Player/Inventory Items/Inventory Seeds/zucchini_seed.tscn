@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7e32ocxly0q8"]
+
+[ext_resource type="PackedScene" uid="uid://dbaan62ir34n2" path="res://Player/InventoryItem.tscn" id="1_flweo"]
+[ext_resource type="Texture2D" uid="uid://brn03q6oshox4" path="res://Resources/Tilesets/Crops.png" id="2_7alsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xedxh"]
+atlas = ExtResource("2_7alsl")
+region = Rect2(96, 0, 32, 32)
+
+[node name="Node" instance=ExtResource("1_flweo")]
+
+[node name="TextureRect" parent="." index="0"]
+texture = SubResource("AtlasTexture_xedxh")

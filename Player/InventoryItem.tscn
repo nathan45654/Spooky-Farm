@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbaan62ir34n2"]
+
+[ext_resource type="Script" path="res://Player/inventory_item.gd" id="1_26x5h"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_26x5h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
